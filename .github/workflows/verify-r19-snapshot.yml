@@ -1,20 +1,41 @@
 name: Verify R19 research snapshot
+
 on:
   push:
     paths:
       - 'R19_EXTERNAL_TRANSFER/**'
       - '.github/workflows/verify-r19-snapshot.yml'
+      - 'README.md'
+      - 'REPRODUCE.md'
+      - 'DATA_PROVENANCE.md'
+      - 'METHODS_AND_LIMITS.md'
+      - 'CITATION.md'
+      - 'PUBLICATION_STATUS.md'
   pull_request:
     paths:
       - 'R19_EXTERNAL_TRANSFER/**'
       - '.github/workflows/verify-r19-snapshot.yml'
+      - 'README.md'
+      - 'REPRODUCE.md'
+      - 'DATA_PROVENANCE.md'
+      - 'METHODS_AND_LIMITS.md'
+      - 'CITATION.md'
+      - 'PUBLICATION_STATUS.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   verify-r19:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
-      - name: Verify R19 integrity and aggregate metrics (stdlib only)
+      - name: Verify fixed ZIP SHA-256
+        working-directory: R19_EXTERNAL_TRANSFER
+        run: sha256sum -c PUBLIC_ZIP_SHA256.txt
+      - name: Verify archived source, partitions, candidates and metrics (stdlib only)
         run: python3 R19_EXTERNAL_TRANSFER/VERIFY_RELEASE.py
+      - name: Compile published Python source without rerunning model fitting
+        run: python3 -m compileall -q R19_EXTERNAL_TRANSFER/code_reference R19_EXTERNAL_TRANSFER/VERIFY_RELEASE.py

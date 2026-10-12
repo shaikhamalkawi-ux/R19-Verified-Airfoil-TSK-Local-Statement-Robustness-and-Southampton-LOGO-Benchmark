@@ -1,0 +1,11 @@
+# Local environments and generated reproduction outputs (not locked research files)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+r19_reproduction/

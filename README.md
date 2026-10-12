@@ -1,38 +1,68 @@
-# R19 — Airfoil TSK Local-Statement Robustness and Southampton LOGO Benchmark
+# Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit
 
-Research code, reported outputs, source-data provenance, and integrity checks for the **R19 Southampton leave-one-geometry-out (LOGO)** extension of the manuscript:
+**R19 Southampton Leave-One-Geometry-Out (LOGO) Benchmark — Source, Data, Results and Reproducibility**
 
-*Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit*.
+[![R19 verification](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/verify-r19-snapshot.yml/badge.svg)](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/verify-r19-snapshot.yml)
 
-## Reproducibility files
+This is the computational companion to the **author-review** manuscript *Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit*, being prepared for **IEEE Access**. The scientific question is whether predictive accuracy is sufficient to support claims about the stability of individual Takagi–Sugeno (TSK) fuzzy-rule statements. **The journal manuscript has not been accepted or published; no article or Zenodo DOI is assigned.**
 
-The independently verified source-to-result archive, executable verifier, code, candidate tables, and result summaries are under [`R19_EXTERNAL_TRANSFER/`](R19_EXTERNAL_TRANSFER/README.md).
+## Two datasets — different targets and audit scopes
 
-Run the dependency-free snapshot audit from the repository root:
+| Component | Scope | Target and purpose | Reproducibility source |
+| --- | --- | --- | --- |
+| NASA/UCI Airfoil Self-Noise (primary) | 1,503 observations, 106 operating configurations | Held-out sound-pressure predictions in **dB**, relearned-rule matching, finite-input local-statement audits | [Parent NASA/UCI research repository](https://github.com/shaikhamalkawi-ux/naca0012-tsk-rule-reproducibility); **not fully replayed by this R19-only ZIP** |
+| Southampton aerofoil spectra (R19) | 343 frequency observations, 38 spectra, 7 geometries from **one** source archive | Held-out geometry evaluation on a **dimensionless source-normalized response**, and rule-activation/statement diagnostics | **This repository** — `R19_EXTERNAL_TRANSFER/` |
+
+The Southampton response uses reference maxima derived from experimental targets. Its errors **must not be reported in dB**, and LOGO evaluation is **not** evidence of calibration-free absolute-noise prediction for a truly new geometry.
+
+## R19 recorded results
+
+Seven outer folds exclude all rows and spectra of the held-out geometry. Within each fold, four-fold spectrum-grouped tuning, feature scaling, clustering and fitting use training data only. The corrected search evaluates **12 Extra Trees configurations** and **45 TSK configurations** per geometry.
+
+| RMSE (dimensionless source-normalized response) | TSK-Ridge | Extra Trees |
+| --- | ---: | ---: |
+| Equal-geometry | 0.059396 | **0.047839** |
+| Equal-spectrum | 0.056368 | **0.043227** |
+| Equal-row | 0.055492 | **0.041538** |
+
+Extra Trees has lower aggregate predictive error. Separately, **30/343** held-out rows fall below the fold-specific training-only fifth-percentile absolute Gaussian activation cutoff; **10/30** still have a highest normalized rule weight of at least 0.9. This is a normalization/coverage diagnostic, **not** a calibrated error-risk score. **18/18** tested local frequency slopes in the refitted LOGO models are conditionally protected at the declared finite-input/ridge budgets; this is not a physical law or cross-geometry certification.
+
+## Find the right file
+
+| Path | Purpose |
+| --- | --- |
+| [`R19_EXTERNAL_TRANSFER/README.md`](R19_EXTERNAL_TRANSFER/README.md) | Exact R19 scope, source-to-result layout, locked findings and scientific limits |
+| [`R19_EXTERNAL_TRANSFER/VERIFY_RELEASE.py`](R19_EXTERNAL_TRANSFER/VERIFY_RELEASE.py) | Python-standard-library-only checksum, split/candidate-table and fixed-output verifier |
+| [Complete R19 source-to-result ZIP](R19_EXTERNAL_TRANSFER/R19_Southampton_ExternalTransfer_SourceToResult_Public.zip) | Original source, executable scripts, inner/outer splits, saved NPZ states, predictions, candidate tables and diagnostics |
+| [`R19_EXTERNAL_TRANSFER/code_reference/`](R19_EXTERNAL_TRANSFER/code_reference/) | Browsable code mirrors and pinned scientific dependencies |
+| [`R19_EXTERNAL_TRANSFER/data/`](R19_EXTERNAL_TRANSFER/data/) | Canonical source-normalized data |
+| [`R19_EXTERNAL_TRANSFER/results/`](R19_EXTERNAL_TRANSFER/results/) | Selected benchmark, coverage, role-sensitivity and replay results |
+| [`REPRODUCE.md`](REPRODUCE.md) | Fast verification versus full model refitting |
+| [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md) | Dataset DOIs, source licenses, hashes and normalization details |
+| [`METHODS_AND_LIMITS.md`](METHODS_AND_LIMITS.md) | Registered methods, results and restricted scientific claims |
+| [`CITATION.md`](CITATION.md) | Interim repository citation with no invented article DOI |
+| [`PUBLICATION_STATUS.md`](PUBLICATION_STATUS.md) | Author-review, software license and archival status |
+
+## Quick reproducibility check
+
+From the repository root:
 
 ```bash
 python3 R19_EXTERNAL_TRANSFER/VERIFY_RELEASE.py
 ```
 
-For full model fitting, extract the R19 ZIP, install the pinned scientific dependencies, and follow the [reproduction instructions](R19_EXTERNAL_TRANSFER/README.md). The quick check validates archived bytes and predictions; it **does not retrain models**.
+This checks the **89-entry** ZIP with **84 SHA-256 manifested payloads**, source hashes, train/test partitions, candidate-grid counts, and RMSE reconstructed from **saved held-out predictions**. It does **not** retrain the models. For full refitting, extract the ZIP and follow [REPRODUCE.md](REPRODUCE.md). The recorded scientific environment uses Python 3.13.5 and pinned package versions.
 
-## Verified scope and findings
+Frozen ZIP SHA-256:
 
-- 343 frequency observations, 38 spectra and seven geometries, all from **one** Southampton experimental archive.
-- Geometry-held-out model evaluation with inner spectrum-grouped tuning on training data.
-- Equal-geometry RMSE on the **dimensionless source-normalized response**: **TSK 0.0593961028381699**, **Extra Trees 0.04783880803883461**.
-- Corrected selection over 12 Extra Trees candidate settings per geometry; full recorded output and independent numerical replay.
-- Small absolute Gaussian firing can coexist with apparently strong normalized weights; this does not establish a calibrated error-risk detector.
-- All local-statement findings depend on the specified fitted models, training support, and numerical budgets.
+```text
+f932dd9f8c2fd269935738b51cbb5a00f3cba67bd25ad0b3904741fa9b9fed6c
+```
 
-**Important limitations:** This is **not** absolute sound-pressure-level prediction in dB on a calibration-free new aerofoil; seven geometries do not represent seven independent experimental campaigns; the work makes no causal aerodynamic claim.
+## Attribution, scope and status
 
-## Lineage and provenance
+Southampton data: [Lau and Kim (2016), DOI 10.5258/SOTON/398169](https://doi.org/10.5258/SOTON/398169), listed under a Creative Commons Attribution license. NASA/UCI Airfoil Self-Noise: [DOI 10.24432/C5VW2C](https://doi.org/10.24432/C5VW2C), CC BY 4.0. Data-source permissions do **not** automatically license original analysis code. **No project software license has been author-approved;** no license is represented as granted.
 
-The [parent NASA/UCI TSK research repository](https://github.com/shaikhamalkawi-ux/naca0012-tsk-rule-reproducibility) retains the earlier R5–R9 evidence, as well as the original copy of this independently checked R19 extension. That repository and the locked R18 NASA scientific results are unchanged by creating this dedicated R19 repository.
+All seven Southampton geometries are from one source archive, not seven independent experiments. The effect of altering antecedent inputs is a model-specific, post hoc diagnostic, not causal feature importance. The earlier NASA benchmark and locked R18 scientific results are not superseded by this R19 extension.
 
-Southampton dataset: Lau and Kim, DOI [10.5258/SOTON/398169](https://doi.org/10.5258/SOTON/398169). NASA/UCI Airfoil Self-Noise benchmark: DOI [10.24432/C5VW2C](https://doi.org/10.24432/C5VW2C). See [attribution and claim limits](R19_EXTERNAL_TRANSFER/ATTRIBUTION_AND_LIMITS.md).
-
-## Publication and license status
-
-This is a public **research-reproducibility snapshot**, **not** a published journal article or Zenodo deposit. The IEEE Access manuscript is still in author review. **No software license has been approved or granted here**; original dataset terms and attribution must be respected. Public access does not itself authorize unrestricted software reuse.
+For questions, use [GitHub Issues](../../issues). **Zenodo deposition and DOI assignment will be considered only after journal acceptance**, as requested by the project owner. Neither journal acceptance nor a formal GitHub Release is claimed.
