@@ -1,0 +1,58 @@
+name: Recover official UCI concrete source (isolated)
+on:
+  push:
+    branches: [uci165-official-source-recovery-20261013]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Download original ZIP directly from UCI and fingerprint source
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p official_uci_165
+          curl --fail --location --silent --show-error --retry 4 --connect-timeout 20 --max-time 180 \
+            --user-agent 'Mozilla/5.0 (compatible; academic-dataset-source-audit/1.0)' \
+            'https://archive.ics.uci.edu/static/public/165/concrete%2Bcompressive%2Bstrength.zip' \
+            -o official_uci_165/uci165_official_download.zip
+          python3 - <<'PY'
+          import datetime,hashlib,json,pathlib,zipfile
+          p=pathlib.Path('official_uci_165')
+          zpath=p/'uci165_official_download.zip'
+          assert zipfile.is_zipfile(zpath), 'official UCI response is not a ZIP archive'
+          with zipfile.ZipFile(zpath) as z:
+              bad=z.testzip()
+              assert bad is None, f'corrupted ZIP entry: {bad}'
+              files=[n for n in z.namelist() if pathlib.PurePosixPath(n).name.lower()=='concrete_data.xls']
+              assert len(files)==1, f'expected one Concrete_Data.xls; got {files}'
+              original=z.read(files[0])
+              names=z.namelist()
+          assert original[:8]==bytes.fromhex('d0cf11e0a1b11ae1'), 'not authentic OLE .xls container signature'
+          out=p/'Concrete_Data.xls'
+          out.write_bytes(original)
+          manifest={
+              'source_url':'https://archive.ics.uci.edu/static/public/165/concrete%2Bcompressive%2Bstrength.zip',
+              'source_domain':'archive.ics.uci.edu',
+              'dataset_doi':'10.24432/C5PK67',
+              'download_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'zip_entries':names,
+              'source_zip_sha256':hashlib.sha256(zpath.read_bytes()).hexdigest(),
+              'source_zip_size_bytes':zpath.stat().st_size,
+              'Concrete_Data_xls_sha256':hashlib.sha256(original).hexdigest(),
+              'Concrete_Data_xls_size_bytes':len(original),
+              'note':'Direct network download by GitHub-hosted runner from official UCI URL; numerical/row reconciliation is a separate audit.'
+          }
+          (p/'ORIGIN_AND_SHA256.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          print(json.dumps(manifest,indent=2))
+          PY
+      - name: Upload source evidence without changing research code
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-uci165-concrete-source-and-manifest
+          path: official_uci_165/
+          if-no-files-found: error
+          retention-days: 30
