@@ -2,6 +2,9 @@
 
 **R19 Southampton Leave-One-Geometry-Out (LOGO) Benchmark — Source, Data, Results and Reproducibility**
 
+> **2026-11-22 companion-study update:** The related NASA parent study has reached **R21R8-EP2 author review**, with **40/40 bootstrap tasks newly replayed (28,000 attempts)**. Its unchanged original slope-sign audit is **403 protected / 107 reversible out of 510** at **0.1 dB + 1% ridge-objective**, and a post-review contextual test is **135 / 375** at **1.0 dB + 1%**. **R19 Southampton source files, validation and numerical outcomes below remain unchanged.** See [current study status and scientific boundaries](R21R8_EP2_20261122_STUDY_STATUS.md). No public Zenodo DOI, licensed software release or journal acceptance is claimed.
+
+
 [![R19 verification](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/verify-r19-snapshot.yml/badge.svg)](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/verify-r19-snapshot.yml)
 
 This is the computational companion to the **author-review** manuscript *Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit*, being prepared for **IEEE Access**. The scientific question is whether predictive accuracy is sufficient to support claims about the stability of individual Takagi–Sugeno (TSK) fuzzy-rule statements. **The journal manuscript has not been accepted or published; no article or Zenodo DOI is assigned.**
@@ -65,4 +68,4 @@ Southampton data: [Lau and Kim (2016), DOI 10.5258/SOTON/398169](https://doi.org
 
 All seven Southampton geometries are from one source archive, not seven independent experiments. The effect of altering antecedent inputs is a model-specific, post hoc diagnostic, not causal feature importance. The earlier NASA benchmark and locked R18 scientific results are not superseded by this R19 extension.
 
-For questions, use [GitHub Issues](../../issues). **Zenodo deposition and DOI assignment will be considered only after journal acceptance**, as requested by the project owner. Neither journal acceptance nor a formal GitHub Release is claimed.
+For questions, use [GitHub Issues](../../issues). **A pre-acceptance Zenodo deposit may now be considered at the owner's request**, but the prior unpublished draft must first be updated and its redistribution rights and author metadata approved. No registered/public project DOI, journal acceptance, or formal GitHub Release is claimed.
