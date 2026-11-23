@@ -1,5 +1,7 @@
 # Project 57 H3Air R21R8-EP11 research archive
 
+Public archive: [GitHub Release](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/releases/tag/h3air-r21r8-ep11-research-v1) · [Zenodo DOI 10.5281/zenodo.24480002](https://doi.org/10.5281/zenodo.24480002). The DOI identifies the research archive, not an IEEE Access article.
+
 This release accompanies the author-review manuscript *Beyond Prediction Accuracy: Local-Slope Robustness in Takagi–Sugeno Fuzzy Models of Airfoil Self-Noise*. The manuscript is not an accepted or published IEEE Access article.
 
 ## Contents and verification
