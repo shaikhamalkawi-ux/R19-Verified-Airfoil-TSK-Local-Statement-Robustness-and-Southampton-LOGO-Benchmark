@@ -1,16 +1,13 @@
-# Referencing this prepublication repository
+# Cite the Project 57 H3Air research archive
 
-This repository contains an auditable research-software snapshot, **not** an accepted IEEE Access article. There is currently **no article DOI, Zenodo DOI or GitHub Release**, and final scholarly/software authorship metadata have not been approved.
+Malkawi, G., Alwedyan, H., Elsayed, A., Ibrahim, A. A., AlShalalfeh, A., & Manna, R. (2026). *Beyond Prediction Accuracy: Local-Slope Robustness in Takagi–Sugeno Fuzzy Models of Airfoil Self-Noise — Research Code, Data Provenance, and Reproducibility Archive (R21R8-EP11)* [Computer software and research data]. Zenodo. [https://doi.org/10.5281/zenodo.24480002](https://doi.org/10.5281/zenodo.24480002).
 
-For an interim technical report or audit, identify the GitHub repository, the **exact commit SHA** used, and the date accessed, e.g.:
+This DOI identifies the published **research archive**, not an accepted or published IEEE Access article. For exact GitHub assets, cite the [tagged GitHub Release](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/releases/tag/h3air-r21r8-ep11-research-v1) and the [SHA-256 manifest](R21R8_EP11_PUBLIC/SHA256SUMS.txt).
 
-> `shaikhamalkawi-ux (2026). R19 Verified Airfoil TSK Local-Statement Robustness and Southampton LOGO Benchmark [Research code and data; GitHub repository, commit <exact-commit-sha>]. https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark`
+Cite original measurements separately when using them:
 
-The GitHub account name in this example is a **repository identifier, not a final determination of scientific authorship**. Replace `<exact-commit-sha>` with the immutable commit used in your analysis; branch `main` alone is not a permanent version reference.
+- Brooks, T., Pope, D., & Marcolini, M. (1989). *Airfoil Self-Noise*. UCI Machine Learning Repository. [DOI 10.24432/C5VW2C](https://doi.org/10.24432/C5VW2C).
+- Lau, A. S. H., & Kim, J. W. (2016). *Dataset for “A study on the prediction of aerofoil trailing-edge noise for wind-turbine applications”*. University of Southampton. [DOI 10.5258/SOTON/398169](https://doi.org/10.5258/SOTON/398169).
+- UCI Concrete Compressive Strength. [DOI 10.24432/C5PK67](https://doi.org/10.24432/C5PK67).
 
-Cite original datasets independently when using their measurements:
-
-- Lau, A. S. H., & Kim, J. W. (2016). *Dataset for “A study on the prediction of aerofoil trailing-edge noise for wind-turbine applications”* [Dataset]. University of Southampton. https://doi.org/10.5258/SOTON/398169
-- Brooks, T., Pope, D., & Marcolini, M. (1989). *Airfoil Self-Noise* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5VW2C
-
-A `CITATION.cff` naming authors and a formal manuscript reference should be introduced only after the owner approves the author/maintainer list and publication status; do not infer them from the account or project folder.
+The 40 public bootstrap task archives contain newly reconstructed states, not the unavailable original historical state files. [Component-level licence and provenance](R21R8_EP11_PUBLIC/LICENSE_SCOPE.md) apply to reuse.
