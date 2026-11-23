@@ -1,14 +1,21 @@
-# Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit
+# Project 57 H3Air — public R21R8-EP11 research archive
 
-> **2026-11-23 EP10 publication preparation:** [Current public-release index, scientific boundaries, and rights checklist](R21R8_EP10_PUBLIC_RELEASE_INDEX.md). This repository and the NASA parent are public. The complete EP10/B28k release and Zenodo DOI are **not yet claimed as uploaded or published**. The public R19 numerical snapshot below remains frozen.\n\n
+**Research release:** [GitHub Release with all 40 newly reconstructed bootstrap task ZIPs](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/releases/tag/h3air-r21r8-ep11-research-v1) · [Zenodo record and public research DOI 10.5281/zenodo.24480002](https://doi.org/10.5281/zenodo.24480002) · [SHA-256 manifest](R21R8_EP11_PUBLIC/SHA256SUMS.txt) · [standalone verifier](R21R8_EP11_PUBLIC/verify_release_assets.py) · [component-level rights](R21R8_EP11_PUBLIC/LICENSE_SCOPE.md).
+
+The 40 task archives contain 28,000 attempt records, 27,998 **newly reconstructed** fitted states and two reproduced FCM failures. They are not recovered original historical state files; those original bytes and the first October 2026 UCI download bytes remain unavailable. The two previously published [EP10 research ZIPs](R21R8_EP10_PUBLIC/) remain at their original paths and are also included in the complete Zenodo record. The clean EP11 author-review manuscript, supplement and selected Additional Files 2–3 are in Zenodo. The response to reviewers is kept in the journal-facing package and is not publicly deposited.
+
+MIT applies only to original research code authorized by its rights holders; CC BY 4.0 applies only to authorized original authored data and documentation. NASA/UCI, Southampton and other third-party sources retain their upstream terms. The research DOI is **not an article DOI**; the article has not been submitted in this release, accepted or published. [Reproduction instructions](R21R8_EP11_PUBLIC/README_RELEASE.md) explain the publicly runnable integrity check and the limit on comparison with unavailable historical arrays.
+
+## Frozen R19 Southampton companion snapshot
+
 **R19 Southampton Leave-One-Geometry-Out (LOGO) Benchmark — Source, Data, Results and Reproducibility**
 
-> **2026-11-22 companion-study update:** The related NASA parent study has reached **R21R8-EP2 author review**, with **40/40 bootstrap tasks newly replayed (28,000 attempts)**. Its unchanged original slope-sign audit is **403 protected / 107 reversible out of 510** at **0.1 dB + 1% ridge-objective**, and a post-review contextual test is **135 / 375** at **1.0 dB + 1%**. **R19 Southampton source files, validation and numerical outcomes below remain unchanged.** See [current study status and scientific boundaries](R21R8_EP2_20261122_STUDY_STATUS.md). No public Zenodo DOI, licensed software release or journal acceptance is claimed.
+ > **Historical R19 companion-study context:** The R19 Southampton source, validation and numerical outcomes below remain unchanged. The later R21R8-EP11 research archive is linked above. No IEEE Access acceptance or article DOI is claimed.
 
 
 [![R19 verification](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/verify-r19-snapshot.yml/badge.svg)](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/verify-r19-snapshot.yml)
 
-This is the computational companion to the **author-review** manuscript *Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit*, being prepared for **IEEE Access**. The scientific question is whether predictive accuracy is sufficient to support claims about the stability of individual Takagi–Sugeno (TSK) fuzzy-rule statements. **The journal manuscript has not been accepted or published; no article or Zenodo DOI is assigned.**
+This is the computational companion to the **author-review** manuscript *Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit*, being prepared for **IEEE Access**. The scientific question is whether predictive accuracy is sufficient to support claims about the stability of individual Takagi–Sugeno (TSK) fuzzy-rule statements. **The journal manuscript has not been accepted or published, and it has no article DOI. The research archive has Zenodo DOI 10.5281/zenodo.24480002.**
 
 ## Two datasets — different targets and audit scopes
 
@@ -65,8 +72,8 @@ f932dd9f8c2fd269935738b51cbb5a00f3cba67bd25ad0b3904741fa9b9fed6c
 
 ## Attribution, scope and status
 
-Southampton data: [Lau and Kim (2016), DOI 10.5258/SOTON/398169](https://doi.org/10.5258/SOTON/398169), listed under a Creative Commons Attribution license. NASA/UCI Airfoil Self-Noise: [DOI 10.24432/C5VW2C](https://doi.org/10.24432/C5VW2C), CC BY 4.0. Data-source permissions do **not** automatically license original analysis code. **No project software license has been author-approved;** no license is represented as granted.
+Southampton data: [Lau and Kim (2016), DOI 10.5258/SOTON/398169](https://doi.org/10.5258/SOTON/398169), listed under a Creative Commons Attribution license. NASA/UCI Airfoil Self-Noise: [DOI 10.24432/C5VW2C](https://doi.org/10.24432/C5VW2C), CC BY 4.0. Data-source permissions do **not** automatically license original analysis code. The EP11 component-level [licence scope](R21R8_EP11_PUBLIC/LICENSE_SCOPE.md) grants MIT only to authorized original project code and CC BY 4.0 only to authorized original authored records and documentation. The historical R19 repository has no blanket licence; upstream Southampton and UCI conditions continue to apply.
 
 All seven Southampton geometries are from one source archive, not seven independent experiments. The effect of altering antecedent inputs is a model-specific, post hoc diagnostic, not causal feature importance. The earlier NASA benchmark and locked R18 scientific results are not superseded by this R19 extension.
 
-For questions, use [GitHub Issues](../../issues). **A pre-acceptance Zenodo deposit may now be considered at the owner's request**, but the prior unpublished draft must first be updated and its redistribution rights and author metadata approved. No registered/public project DOI, journal acceptance, or formal GitHub Release is claimed.
+For questions, use [GitHub Issues](../../issues). The R21R8-EP11 research release is public; the journal article remains in author review.
