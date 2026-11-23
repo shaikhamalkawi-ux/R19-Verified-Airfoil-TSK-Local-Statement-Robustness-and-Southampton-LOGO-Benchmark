@@ -1,5 +1,6 @@
 # Local-Statement Robustness in Takagi–Sugeno Airfoil Self-Noise Regression: A Finite-Input Audit
 
+> **2026-11-23 EP10 publication preparation:** [Current public-release index, scientific boundaries, and rights checklist](R21R8_EP10_PUBLIC_RELEASE_INDEX.md). This repository and the NASA parent are public. The complete EP10/B28k release and Zenodo DOI are **not yet claimed as uploaded or published**. The public R19 numerical snapshot below remains frozen.\n\n
 **R19 Southampton Leave-One-Geometry-Out (LOGO) Benchmark — Source, Data, Results and Reproducibility**
 
 > **2026-11-22 companion-study update:** The related NASA parent study has reached **R21R8-EP2 author review**, with **40/40 bootstrap tasks newly replayed (28,000 attempts)**. Its unchanged original slope-sign audit is **403 protected / 107 reversible out of 510** at **0.1 dB + 1% ridge-objective**, and a post-review contextual test is **135 / 375** at **1.0 dB + 1%**. **R19 Southampton source files, validation and numerical outcomes below remain unchanged.** See [current study status and scientific boundaries](R21R8_EP2_20261122_STUDY_STATUS.md). No public Zenodo DOI, licensed software release or journal acceptance is claimed.
