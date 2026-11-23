@@ -1,6 +1,6 @@
 # Project 57 H3Air — R21R8-EP10 public release index
 
-**Status as of 2026-11-23:** This repository is PUBLIC. The R19 Southampton source-to-result benchmark is already publicly browsable. R21R8-EP10 is the **author-approved scientific manuscript version being prepared for IEEE Access resubmission**; publication of its complete scientific/evidence archive is still being staged and verified, not represented as finished here.
+**Status as of 2026-11-23:** This repository is PUBLIC. The R19 Southampton source-to-result benchmark is already publicly browsable. R21R8-EP10 is the **author-approved scientific manuscript version being prepared for IEEE Access resubmission**; Two selected public EP10 archives are now online and SHA-256-verified by GitHub Actions. The complete 28,000-attempt new-state archive is not yet public.
 
 **Article title:** Beyond Prediction Accuracy: Local-Slope Robustness in Takagi–Sugeno Fuzzy Models of Airfoil Self-Noise
 
@@ -16,13 +16,19 @@
 - [Southampton official experimental measurements](https://doi.org/10.5258/SOTON/398169), subject to source conditions.
 - [UCI concrete official measurements](https://doi.org/10.24432/C5PK67), CC BY 4.0.
 
-## EP10 materials to be uploaded and verified (NOT claimed as present here yet)
+## Public EP10 archives — verified and accessible now
 
-- Clean EP10 manuscript and 27-page supplementary methods PDF; editable LaTeX source, figures, bibliography.
-- Additional File 2: 160 selected post hoc executable/code/scalar records.
-- Additional File 3: 49 selected frozen-parent state/witness files plus the scoped README and file manifest.
-- The public-safe EP10 method scripts, fixed results, source-admission/census records and checksums.
-- Full 40-task deterministic bootstrap replay (**28,000 attempts, 27,998 successes, two historical fitting failures**) **only after** a file-level privacy, third-party rights, provenance and reproducibility check. These are NEWLY replayed internal fitted states, not recovered original historical fitted-state bytes.
+- **[EP10 manuscript, supplementary PDF, editable LaTeX and authored figures](R21R8_EP10_PUBLIC/57H3Air_R21R8_EP10_Public_Preprint_and_Editable_Source.zip)** — 4,043,013 bytes, SHA-256 `1b36bcdbd9859dc3721a782279aa81f4e97fed3d5c0fb065377bbb7dc4ea4d52`.
+- **[EP10 selected analysis code, derived records and fitted-state/witness evidence](R21R8_EP10_PUBLIC/57H3Air_R21R8_EP10_Public_Selected_Code_and_Numerical_Evidence.zip)** — 12,089,248 bytes, SHA-256 `10c766acb2f0669aaf9d760c55bf17daba96a8cb827217f1ba6a0229c80ff091`.
+- [Live GitHub Actions verification](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/workflows/assemble-ep10-public.yml) verifies ZIP CRC, inner member hashes, exact outer SHA-256 and byte counts.
+- Original reviewer comments/response correspondence are **excluded** from this public source publication. An IEEE journal-facing author-response DOCX/PDF is available only through controlled author sharing.
+
+## Still pending — not claimed as public
+
+- Full 40-task newly reconstructed bootstrap state archive (**28,000 attempts, 27,998 successes, two fitting failures**). Only the selected evidence is public above; remaining files require separate release and hash audit.
+- Formal project-wide software reuse license, explicit contributor permission for that license and an actual published Zenodo DOI.
+- Any later clean manuscript containing a Zenodo DOI must be a separately verified version; the DOI is not yet inserted.
+
 
 ## Scientific boundaries
 
