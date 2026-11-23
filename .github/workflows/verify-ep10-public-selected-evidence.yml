@@ -1,0 +1,18 @@
+name: Verify EP10 public selected evidence
+on:
+  push:
+    paths:
+      - 'R21R8_EP10_PUBLIC/selected_evidence_parts/**'
+      - '.github/workflows/verify-ep10-public-selected-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout public repository
+        uses: actions/checkout@v4
+      - name: Verify all 19 parts and 551 internal SHA-256-locked members
+        run: python3 R21R8_EP10_PUBLIC/selected_evidence_parts/reassemble_and_verify.py
