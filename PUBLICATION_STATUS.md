@@ -10,3 +10,10 @@
 The R19 Southampton research snapshot remains scientifically frozen. NASA 0.1 dB + 1% counts are 403 protected / 107 strict reversals among 510 slopes; the separate 1 dB + 1% sensitivity is 135 / 375. Southampton source-normalized equal-geometry RMSE remains 0.059396 (TSK) and 0.047839 (Extra Trees). The new release changes access and provenance documentation, not scientific results.
 
 Confidential correspondence, reviewer letters, publisher assets, credentials and restricted Bristol raw HDF5 were not deposited. The final Highlighted PDF and IEEE Access submission remain deferred.
+
+## Public reproducibility update — 25 November 2026
+
+- [Zenodo landing page](https://zenodo.org/records/24480002) and [research archive DOI](https://doi.org/10.5281/zenodo.24480002): the previously reported public EP11 record, not an IEEE article DOI. The current update did not independently re-download or verify the Zenodo record.
+- The [EP11 completion certificate](R21R8_EP11_PUBLIC/R21R8_FULL40_Completion_Certificate.json) and [independent QA record](R21R8_EP11_PUBLIC/R21R8_Independent_Full28k_QA.json) are available at their original public paths. The 40-asset GitHub release remains unchanged.
+- [New public R5 prediction-fold audit](PUBLIC_R5_FOLD_AUDIT/README.md): independent recomputation from two already-public pinned R5 CSVs, covering 13 overall contrasts and 130 paired fold differences. This is a descriptive saved-prediction audit, not a refit or a full EP16 public release. It does not contain private reviewer evidence.
+- Later author-review evidence is not included in the existing public archive unless a separate rights-cleared version is released. No journal submission or acceptance is implied by this update.

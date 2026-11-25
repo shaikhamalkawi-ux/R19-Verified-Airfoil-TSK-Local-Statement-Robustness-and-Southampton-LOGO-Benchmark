@@ -6,6 +6,13 @@ The 40 task archives contain 28,000 attempt records, 27,998 **newly reconstructe
 
 MIT applies only to original research code authorized by its rights holders; CC BY 4.0 applies only to authorized original authored data and documentation. NASA/UCI, Southampton and other third-party sources retain their upstream terms. The research DOI is **not an article DOI**; the article has not been submitted in this release, accepted or published. [Reproduction instructions](R21R8_EP11_PUBLIC/README_RELEASE.md) explain the publicly runnable integrity check and the limit on comparison with unavailable historical arrays.
 
+## Public reproducibility update — 25 November 2026
+
+- [Zenodo landing page](https://zenodo.org/records/24480002) and [research archive DOI](https://doi.org/10.5281/zenodo.24480002): the previously reported public EP11 record, not an IEEE article DOI. The current update did not independently re-download or verify the Zenodo record.
+- The [EP11 completion certificate](R21R8_EP11_PUBLIC/R21R8_FULL40_Completion_Certificate.json) and [independent QA record](R21R8_EP11_PUBLIC/R21R8_Independent_Full28k_QA.json) are available at their original public paths. The 40-asset GitHub release remains unchanged.
+- [New public R5 prediction-fold audit](PUBLIC_R5_FOLD_AUDIT/README.md): independent recomputation from two already-public pinned R5 CSVs, covering 13 overall contrasts and 130 paired fold differences. This is a descriptive saved-prediction audit, not a refit or a full EP16 public release. It does not contain private reviewer evidence.
+- Later author-review evidence is not included in the existing public archive unless a separate rights-cleared version is released. No journal submission or acceptance is implied by this update.
+
 ## Frozen R19 Southampton companion snapshot
 
 **R19 Southampton Leave-One-Geometry-Out (LOGO) Benchmark — Source, Data, Results and Reproducibility**

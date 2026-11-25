@@ -1,0 +1,899 @@
+{
+  "status": "PASS",
+  "source_rows": 30060,
+  "selected_model_feature_families": 14,
+  "observations": 1503,
+  "groups": 106,
+  "folds": 10,
+  "overall_contrasts": 13,
+  "paired_fold_differences": 130,
+  "max_abs_overall_difference_from_public_table_dB": 8.881784197001252e-16,
+  "summary": [
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F4:TSK-Ridge-oneSE",
+      "overall_difference_dB": 0.21660542983866682,
+      "fold_mean_dB": 0.2145939395221459,
+      "fold_sample_sd_dB": 0.29778397958955627
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:TSK-LS-oneSE",
+      "overall_difference_dB": -0.22840874618334261,
+      "fold_mean_dB": -0.19228259724705715,
+      "fold_sample_sd_dB": 0.35050792026517813
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "A": "F4:TSK-Ridge-oneSE",
+      "B": "F4:TSK-LS-oneSE",
+      "overall_difference_dB": -0.0896037717371656,
+      "fold_mean_dB": -0.0856176935750724,
+      "fold_sample_sd_dB": 0.24903240896431983
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:TSK-LS-at-RidgeStructure",
+      "overall_difference_dB": -0.18449515553255313,
+      "fold_mean_dB": -0.13907598040295746,
+      "fold_sample_sd_dB": 0.3273288852218472
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "A": "F4:TSK-Ridge-oneSE",
+      "B": "F4:TSK-LS-at-RidgeStructure",
+      "overall_difference_dB": 0.06765444613670901,
+      "fold_mean_dB": 0.0729028004048117,
+      "fold_sample_sd_dB": 0.1939154110257401
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:TSK-Ridge-min_error",
+      "overall_difference_dB": 0.09746269547434316,
+      "fold_mean_dB": 0.09292152463793339,
+      "fold_sample_sd_dB": 0.29163600636014053
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "A": "F4:TSK-Ridge-oneSE",
+      "B": "F4:TSK-Ridge-min_error",
+      "overall_difference_dB": 0.10711565489963748,
+      "fold_mean_dB": 0.12336856302586727,
+      "fold_sample_sd_dB": 0.1371936246281327
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:linear_ridge",
+      "overall_difference_dB": -0.8941476002269022,
+      "fold_mean_dB": -0.9121736811094593,
+      "fold_sample_sd_dB": 0.5967695321944261
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:svr",
+      "overall_difference_dB": 1.4276393783367007,
+      "fold_mean_dB": 1.5012007298219534,
+      "fold_sample_sd_dB": 0.49021297565231586
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:extra_trees",
+      "overall_difference_dB": 1.7853118534874626,
+      "fold_mean_dB": 1.7901066887137218,
+      "fold_sample_sd_dB": 0.33470207963726006
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "A": "F5:TSK-Ridge-oneSE",
+      "B": "F5:xgboost",
+      "overall_difference_dB": 1.5180683540345088,
+      "fold_mean_dB": 1.5614446468689664,
+      "fold_sample_sd_dB": 0.4927620204333824
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "A": "F5:extra_trees",
+      "B": "F4:extra_trees",
+      "overall_difference_dB": -0.3062070972557547,
+      "fold_mean_dB": -0.2933976612868227,
+      "fold_sample_sd_dB": 0.1598364534753706
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "A": "F5:xgboost",
+      "B": "F4:xgboost",
+      "overall_difference_dB": -0.0566666283150159,
+      "fold_mean_dB": -0.06567440835819197,
+      "fold_sample_sd_dB": 0.14435149378307033
+    }
+  ],
+  "fold_differences": [
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 0.0949432934174288
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": -0.01638842395662543
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": 0.4398644371378211
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.15378646818187036
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0.003923491613056385
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.18292367957987343
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 0.5388528254131328
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": 0.42104958191393616
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 0.6239831479294451
+    },
+    {
+      "contrast": "F5 minus F4 compact ridge",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 0.3764211895150078
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": -0.03815883934833897
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0.06488897624057266
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.07711456880995371
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.14491395348704783
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0.04859118709231325
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.033943871891440214
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": -0.08416341500945279
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.5639279173886909
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": -0.03925545713692813
+    },
+    {
+      "contrast": "F5 compact ridge minus LS independent selection",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": -1.054828112731605
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 0.05156744584523665
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0.431935714846289
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.13616881774024936
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.005733535666438527
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0.043256426403390336
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.304502282073035
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": -0.4505162591486904
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.0013685747919152114
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": -0.3081063634233847
+    },
+    {
+      "contrast": "F4 compact ridge minus LS independent selection",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": -0.17654069000192685
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": -0.03815883934833986
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0.06488897624057266
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.07711456880995415
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.14491395348704783
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0.048591187092314136
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.03394387189143888
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": -0.07615287825601413
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.039872285701134214
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": -0.03925545713692724
+    },
+    {
+      "contrast": "F5 ridge minus unpenalized identical structure",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": -1.054828112731605
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 0.051567445845236204
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0.431935714846289
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.13616881774024936
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.0057335356664394155
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0.04325642640338945
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": 0.23197630931050028
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 0.31064425190355216
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.001368574791913879
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": -0.020540526060322417
+    },
+    {
+      "contrast": "F4 ridge minus unpenalized identical structure",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": -0.17654069000192507
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 0.3129042523424177
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0.6745168251614562
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.0438760094925601
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.33686349569641694
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.17161134143925372
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 0
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": 0.12061322364071847
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 0
+    },
+    {
+      "contrast": "F5 oneSE minus min error",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 0.37353179186297236
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 0.32812304966097994
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": 0.030489237801374802
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": 0.19078197228161287
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 0.09475032988117427
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": 0.3454832753132684
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 0
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": 0.1650108818221918
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 0.1341691874036468
+    },
+    {
+      "contrast": "F4 oneSE minus min error",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": -0.05512230390557615
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": -0.8928677620466918
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": -0.3053070116835812
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -1.392076352260251
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -1.0733973500719016
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": -0.6704547935224738
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -1.4138852139165308
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": -1.7488834594838911
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.9187192503693513
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": -1.0403824922251124
+    },
+    {
+      "contrast": "F5 compact ridge minus linear_ridge",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 0.33423687448519246
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 1.2729673224462918
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 1.9514322504514343
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": 0.8911817166160119
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": 1.7381429647826558
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 1.9932342232758593
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": 1.3354683045791669
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 1.9677455010539329
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": 1.241114925019088
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 1.9630475448931146
+    },
+    {
+      "contrast": "F5 compact ridge minus svr",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 0.6576725451019767
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 1.8698419079373407
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 1.5520132812020866
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": 1.3283074325964237
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": 1.9539218354415029
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 1.9582859692586938
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": 1.4349668284511843
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 2.3321687031988696
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": 1.4767603644068394
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 1.8067144114112974
+    },
+    {
+      "contrast": "F5 compact ridge minus extra_trees",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 2.188086153232982
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": 1.6044047007570468
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": 0.7047435752115621
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": 0.9440961148191138
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": 1.7975438309321563
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": 2.0654573247472556
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": 1.3113690833297613
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": 2.3202333795520635
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": 1.372329414869295
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 1.835543835930145
+    },
+    {
+      "contrast": "F5 compact ridge minus xgboost",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 1.6587252085412634
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": -0.30118412779309556
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": -0.6118677751544737
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.2514173439477698
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": -0.09406503719992232
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": -0.3707721927864229
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.33375741009172666
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": -0.21591678986095486
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.04671334726908771
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": -0.40462792919045665
+    },
+    {
+      "contrast": "extra_trees F5 minus F4",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": -0.30365465957431725
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 0,
+      "groups": 10,
+      "difference_dB": -0.16621418186266101
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 1,
+      "groups": 10,
+      "difference_dB": -0.13231117322631514
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 2,
+      "groups": 11,
+      "difference_dB": -0.11348166624801914
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 3,
+      "groups": 11,
+      "difference_dB": 0.11208203388519222
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 4,
+      "groups": 11,
+      "difference_dB": -0.1472392761165522
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 5,
+      "groups": 11,
+      "difference_dB": -0.11059896406765812
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 6,
+      "groups": 11,
+      "difference_dB": -0.24385737271523444
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 7,
+      "groups": 10,
+      "difference_dB": -0.1417190625807656
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 8,
+      "groups": 10,
+      "difference_dB": 0.19603692115980254
+    },
+    {
+      "contrast": "xgboost F5 minus F4",
+      "fold": 9,
+      "groups": 11,
+      "difference_dB": 0.0905586581902913
+    }
+  ]
+}
