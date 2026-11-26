@@ -1,0 +1,11 @@
+# H3Air — additional scientific evidence (26 November 2026)
+Public reproducibility evidence accompanying the current research revision. No journal article DOI, journal submission or acceptance is asserted. The historical [EP11 Zenodo deposit](https://doi.org/10.5281/zenodo.24480002) and [EP18 GitHub release](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/releases/tag/h3air-r21r8-ep18-evidence-v1) are unchanged. These additional artifacts are not represented as part of that Zenodo deposit. The author-review manuscript and correspondence remain private.
+
+| Archive | Scientific scope |
+| --- | --- |
+| [Bristol code and aggregate evidence](57H3Air_EP20_Bristol_Code_and_Aggregate_Evidence.zip) | Separate refits on 1,464 SPL measurements, 122 spectra, four geometries; 272 tests and 47 witnesses. Source retrieval and aggregate results only; no Bristol raw data or detailed derived arrays. |
+| [Operating support audit](57H3Air_EP21_Operating_Support_Audit_Public.zip) | 106 configurations; 95 included and 11 outside the three-coordinate training hull, exact certificates, error-rank audit. |
+| [Exact OOF local verification](57H3Air_EP21_Exact_OOF_Local_Verification_Public.zip) | 30,060 pinned public prediction records; complete local verification at original precision, 106 classifications and 12 rankings. |
+| [Exploratory joint input feasibility](57H3Air_Exploratory_Joint_Input_Feasibility_Public.zip) | 410 protected / 100 reversible under joint observed-input constraints; separate post hoc diagnostic NOT incorporated into manuscript. |
+
+See [component rights](LICENSE_SCOPE.md) and [SHA-256 manifest](SHA256SUMS.txt). Each ZIP contains its own manifest and execution instructions. Public copies preserve original numerical payloads; only release-scope documentation and redundant/private inputs or logs are changed/excluded. Bristol is an independent method replication after refitting, not NASA-to-Bristol predictor transfer. Support audit is not a causal explanation or full five-input coverage result. The exploratory audit is not prospective transport. Source datasets remain under their respective upstream terms.
