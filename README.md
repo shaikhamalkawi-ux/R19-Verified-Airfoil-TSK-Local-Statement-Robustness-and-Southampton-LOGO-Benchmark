@@ -1,5 +1,9 @@
 # Project 57 H3Air — public R21R8-EP11 research archive
 
+## NASA relearning and held-out witness evidence — 26 November 2026
+
+The [NASA relearning and witness-transport audit](PUBLIC_NASA_RELEARNING_TRANSPORT_AUDIT/README.md) links the frozen public R5/R9 records and AF4 witness table. It records **7,998/8,000 successful antecedent-relearning attempts**, **11.612 dB** median fold-level matched local-function disagreement on joint support for F5 one-SE TSK-ridge, and **69/107** original strict reversal witnesses retaining the 0.1-dB prediction-change bound on their corresponding held-out inputs (38 exceed it). These are distinct conditional diagnostics, not universal transport or independent physical validation. No scientific results or existing evidence archives were changed.
+
 ## Additional scientific evidence through EP21 — 26 November 2026
 
 The [public evidence directory](R21R8_EP21_PUBLIC/README.md) provides four checked archives: the Bristol reproduction code and aggregate evidence (AF6), the all-configuration support audit (AF7), the exact original-precision OOF verification, and a separately labelled exploratory joint-input feasibility diagnostic not incorporated into the manuscript. Each archive has reproducibility instructions; the directory contains [SHA-256 checksums](R21R8_EP21_PUBLIC/SHA256SUMS.txt) and [component rights](R21R8_EP21_PUBLIC/LICENSE_SCOPE.md). The original Bristol measurements, source-derived row-level records and fitted states, confidential review materials and the current author-review manuscript are not distributed here. The prior EP11 Zenodo deposit and EP18 GitHub Release remain unchanged. These additional artifacts are available on GitHub, not claimed to be deposited on Zenodo. No journal resubmission or acceptance is implied.
