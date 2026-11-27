@@ -1,0 +1,49 @@
+name: EP28 anonymous evidence readback
+on:
+  push:
+    branches: [h3air-ep28-independent-readback-audit-20261128]
+    paths: [.github/workflows/ep28-public-readback.yml]
+permissions: {}
+jobs:
+  readback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Verify pinned public archives without authentication
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, io, json, urllib.request, urllib.parse, zipfile
+          from concurrent.futures import ThreadPoolExecutor
+          base = "https://raw.githubusercontent.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/"
+          historical = base + "8ee7654cac10ac887e4370a316d838d1d19da09e/R5_HISTORICAL_BOOTSTRAP_EVIDENCE/"
+          concrete = base + "26dc31207160a477a125614f5c4de97a5a9577fa/CONCRETE_EP26_RIGHTS_SCOPED_EVIDENCE/H3Air_EP26_Concrete_RightsScoped_Public_Evidence.zip"
+          def read(url):
+              with urllib.request.urlopen(url, timeout=90) as response:
+                  return response.read()
+          def sha(data):
+              return hashlib.sha256(data).hexdigest()
+          raw = read(historical + "TASK_ARCHIVE_MANIFEST.json")
+          assert sha(raw) == "06b3f5e1bcc2ca9aa5b7e504b68e583ef1fc8494c18abbcc7123ddca8f475388", "manifest differs from independently fetched Drive copy"
+          manifest = json.loads(raw)
+          assert len(manifest) == 41
+          def check(item):
+              name, expected = item
+              data = read(historical + urllib.parse.quote(name))
+              assert len(data) == expected["bytes"], name
+              assert sha(data) == expected["sha256"], name
+              assert hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest() == expected["git_blob_sha1"], name
+              with zipfile.ZipFile(io.BytesIO(data)) as z:
+                  assert z.testzip() is None, name
+              return f"PASS {name} {len(data)} {sha(data)}"
+          with ThreadPoolExecutor(max_workers=4) as pool:
+              for result in pool.map(check, sorted(manifest.items())):
+                  print(result, flush=True)
+          print("HISTORICAL PUBLIC READBACK: 41/41 PASS", flush=True)
+          data = read(concrete)
+          assert len(data) == 2101536
+          assert sha(data) == "2cc798e2db4f533f82a7ba8cbd802d6ba2b06eaf4effa9d6fc531ac35318bf97"
+          with zipfile.ZipFile(io.BytesIO(data)) as z:
+              assert z.testzip() is None
+          print("CONCRETE PUBLIC READBACK: PASS", len(data), sha(data), flush=True)
+          PY
