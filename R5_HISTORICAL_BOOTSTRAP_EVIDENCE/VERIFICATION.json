@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "selected_original_hash_checks": 285,
+  "attempts": 28000,
+  "successful": 27998,
+  "failed": 2,
+  "seed_checks": 28000,
+  "matching_assignment_checks": 83994,
+  "summary_scalar_checks": 1440,
+  "summary_rows": 160,
+  "branch_files": 80,
+  "parent_files": 40,
+  "aggregate_rows": 16,
+  "max_absolute_summary_differences": {
+    "matched_rule_fraction": 0.0,
+    "fraction_fully_matched": 3.469446951953614e-18,
+    "coef_sd_median": 3.552713678800501e-15,
+    "coef_sd_p90": 1.4210854715202004e-14,
+    "local_disp_rms_median": 4.332090242087361e-13,
+    "local_disp_rms_p90": 3.170796958329447e-13,
+    "pred_disp_rms": 1.7763568394002505e-15,
+    "point_sd_median": 4.440892098500626e-16,
+    "point_sd_p90": 1.7763568394002505e-15
+  },
+  "note": "Stored-output verification, not refitting or recovery of missing historical antecedent states."
+}
