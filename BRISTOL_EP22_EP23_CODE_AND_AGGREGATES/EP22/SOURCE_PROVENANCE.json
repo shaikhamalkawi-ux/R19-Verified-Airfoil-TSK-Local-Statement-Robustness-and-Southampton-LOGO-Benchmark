@@ -1,0 +1,22 @@
+{
+  "source_doi": "10.5523/bris.30c8q39wi1mxf205flnun3l5rl",
+  "source_url": "https://data.bris.ac.uk/data/dataset/30c8q39wi1mxf205flnun3l5rl",
+  "official_directory": "https://data.bris.ac.uk/datasets/30c8q39wi1mxf205flnun3l5rl/",
+  "official_zip_url": "https://data.bris.ac.uk/datasets/30c8q39wi1mxf205flnun3l5rl/30c8q39wi1mxf205flnun3l5rl.zip",
+  "archive_bytes": 68279376,
+  "archive_sha256": "a01cc8c447a964e2698755090f55babf447ca370c9edb4a1f1ef88cc4ca2311a",
+  "archive_crc": "PASS",
+  "embedded_catalogue_sha1_records": 59,
+  "embedded_catalogue_sha1_matched": 59,
+  "provenance_boundary": "Archive size matches official directory. The original user-supplied ZIP and its embedded provider manifest were checked; no separately obtained official ZIP checksum or independent byte download was available.",
+  "source_licence": "Non-Commercial Government Licence for public sector information",
+  "source_licence_url": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/non-commercial-government-licence.htm",
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "h5py": "3.15.1"
+  }
+}

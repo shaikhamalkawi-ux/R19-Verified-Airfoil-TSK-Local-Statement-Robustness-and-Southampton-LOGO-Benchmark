@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "optimizer_calls": 0,
+  "exact_row_checks": 1464,
+  "heldout_upper_bound_rows": 372,
+  "direct_violations": 180,
+  "QP_dual_replays": 4,
+  "near_frontier_witnesses": 5,
+  "min_direct_test_excess_dB": 1.4627301930539294e-05,
+  "source_states_sha256": 9
+}

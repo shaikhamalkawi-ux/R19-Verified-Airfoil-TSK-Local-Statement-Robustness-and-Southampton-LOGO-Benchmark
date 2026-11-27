@@ -1,0 +1,13 @@
+protocol,epsilon,feature,statements,train_protected,train_reversible,train_unresolved,original_witness_retained,joint_protected,joint_reversible,joint_unresolved
+LOGO,0.1,all,32,27,5,0,5,27,5,0
+LOGO,0.1,geometric_angle,16,11,5,0,5,11,5,0
+LOGO,0.1,log10_frequency,16,16,0,0,0,16,0,0
+LOGO,1.0,all,32,21,11,0,11,21,11,0
+LOGO,1.0,geometric_angle,16,5,11,0,11,5,11,0
+LOGO,1.0,log10_frequency,16,16,0,0,0,16,0,0
+NACA0012,0.1,all,104,94,10,0,10,94,10,0
+NACA0012,0.1,geometric_angle,52,46,6,0,6,46,6,0
+NACA0012,0.1,log10_frequency,52,48,4,0,4,48,4,0
+NACA0012,1.0,all,104,83,21,0,21,83,21,0
+NACA0012,1.0,geometric_angle,52,39,13,0,13,39,13,0
+NACA0012,1.0,log10_frequency,52,44,8,0,8,44,8,0

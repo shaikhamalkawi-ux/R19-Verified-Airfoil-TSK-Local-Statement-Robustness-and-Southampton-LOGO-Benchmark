@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "source_sha256": "a01cc8c447a964e2698755090f55babf447ca370c9edb4a1f1ef88cc4ca2311a",
+  "scope": "post hoc descriptive finite-sample, no causal or population claim",
+  "scopes": [
+    {
+      "scope": "all",
+      "rows": 1464,
+      "spectra": 122,
+      "distinct_keys": 372,
+      "multiplicity_histogram": {
+        "2": 12,
+        "4": 360
+      },
+      "keys_with_disagreeing_y": 372,
+      "rows_with_cross_geometry_match": 1464,
+      "max_response_range_dB": 12.62026427641603,
+      "wrow_oracle_MSE": 3.950732305072156,
+      "wrow_oracle_RMSE": 1.987644914231955,
+      "wrow_pairwise_MSE": 3.9507323050721546,
+      "wgeo_oracle_MSE": 3.9489445988300074,
+      "wgeo_oracle_RMSE": 1.987195158717434,
+      "wgeo_pairwise_MSE": 3.9489445988300025,
+      "LOGO_train_only_exact_key_mean_RMSE_equal_geometry": 2.6517376819418,
+      "LOGO_train_only_exact_key_mean_RMSE_equal_row": 2.6521344644247224
+    },
+    {
+      "scope": "common_angles_ge_minus4",
+      "rows": 1440,
+      "spectra": 120,
+      "distinct_keys": 360,
+      "multiplicity_histogram": {
+        "4": 360
+      },
+      "keys_with_disagreeing_y": 360,
+      "rows_with_cross_geometry_match": 1440,
+      "max_response_range_dB": 12.62026427641603,
+      "wrow_oracle_MSE": 4.011868741326388,
+      "wrow_oracle_RMSE": 2.0029649875438134,
+      "wrow_pairwise_MSE": 4.011868741326385,
+      "wgeo_oracle_MSE": 4.011868741326388,
+      "wgeo_oracle_RMSE": 2.0029649875438134,
+      "wgeo_pairwise_MSE": 4.011868741326385,
+      "LOGO_train_only_exact_key_mean_RMSE_equal_geometry": 2.670619983391751,
+      "LOGO_train_only_exact_key_mean_RMSE_equal_row": 2.670619983391751
+    }
+  ],
+  "common_grid_LOGO_identity": "RMSE_LOGO_mean = 4/3 * RMSE_pooled_oracle"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "source_sha1_matches": 59,
+  "rows": 1464,
+  "spectra": 122,
+  "outer_folds": 9,
+  "inner_folds": 37,
+  "budget_statement_tests": 272,
+  "original_strict_witnesses": 47,
+  "all_training_classifications_resolved": true,
+  "all_joint_classifications_resolved": true,
+  "max_errors": {
+    "design": 0.0,
+    "ridge_stationarity": 4.440892098500626e-15,
+    "ridge_coef": 1.5241141682054149e-12,
+    "tsk_pred": 7.105427357601002e-15,
+    "et_pred": 2.842170943040401e-14,
+    "zero_lower_replay": 7.216449660063518e-16,
+    "zero_upper_replay": 9.020562075079397e-17,
+    "direct_objective": 1.438085761584773e-15,
+    "crossing": 2.1141942363467336e-16
+  },
+  "min_margins": {
+    "protection_gap": 0.004321734050577036,
+    "strict_prediction_slack": 0.00946255181790287,
+    "strict_objective_slack": 2.8058978751577257e-13
+  },
+  "scope": "independent source row alignment, split checks, stored score selection, fixed-design ridge and selected Extra Trees replay, all primal/dual certificate checks; no inner tuning refit or optimizer rerun"
+}

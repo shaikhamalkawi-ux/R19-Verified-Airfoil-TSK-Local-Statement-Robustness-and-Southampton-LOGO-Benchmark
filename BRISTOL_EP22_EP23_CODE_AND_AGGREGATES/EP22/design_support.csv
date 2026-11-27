@@ -1,0 +1,10 @@
+fold,test_rows,matched,exact_design_rows,max_design_difference
+LOGO_00,372,372,372,0.0
+LOGO_01,360,360,360,0.0
+LOGO_02,372,372,372,0.0
+LOGO_03,360,360,360,0.0
+NACA0012_00,84,0,0,
+NACA0012_01,72,0,0,
+NACA0012_02,72,0,0,
+NACA0012_03,72,0,0,
+NACA0012_04,72,0,0,
