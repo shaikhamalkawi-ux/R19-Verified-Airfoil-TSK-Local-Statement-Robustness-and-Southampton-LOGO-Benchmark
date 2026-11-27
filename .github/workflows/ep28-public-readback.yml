@@ -3,6 +3,9 @@ on:
   push:
     branches: [h3air-ep28-independent-readback-audit-20261128]
     paths: [.github/workflows/ep28-public-readback.yml]
+  pull_request:
+    branches: [main]
+    paths: [.github/workflows/ep28-public-readback.yml]
 permissions: {}
 jobs:
   readback:
