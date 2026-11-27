@@ -1,5 +1,9 @@
 # Project 57 H3Air — public R21R8-EP11 research archive
 
+## Evidence access update — 27 November 2026
+
+See the [current reproducibility evidence index](PUBLIC_EVIDENCE_INDEX_20261127.md) for verified public release paths, the project representative's confirmation of unsigned Zenodo landing-page access, and the scope of later controlled evidence. Existing release assets and scientific outputs remain unchanged.
+
 ## NASA relearning and held-out witness evidence — 26 November 2026
 
 The [NASA relearning and witness-transport audit](PUBLIC_NASA_RELEARNING_TRANSPORT_AUDIT/README.md) links the frozen public R5/R9 records and AF4 witness table. It records **7,998/8,000 successful antecedent-relearning attempts**, **11.612 dB** median fold-level matched local-function disagreement on joint support for F5 one-SE TSK-ridge, and **69/107** original strict reversal witnesses retaining the 0.1-dB prediction-change bound on their corresponding held-out inputs (38 exceed it). These are distinct conditional diagnostics, not universal transport or independent physical validation. No scientific results or existing evidence archives were changed.
