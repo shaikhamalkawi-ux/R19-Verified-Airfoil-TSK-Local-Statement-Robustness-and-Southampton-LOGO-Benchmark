@@ -1,5 +1,13 @@
 # Project 57 H3Air — public R21R8-EP11 research archive
 
+## Additional public evidence — 28 November 2026
+
+- [Historical R5 stored-output selection](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/tree/8ee7654cac10ac887e4370a316d838d1d19da09e/R5_HISTORICAL_BOOTSTRAP_EVIDENCE): 80 branch-result NPZs and 40 parent NPZs; all 41 ZIP names, byte sizes and Git blob SHA-1 values match the original archive manifest. Independent full-file retrieval and SHA-256 verification are still pending. This selection is distinct from the 40 newly fitted EP11 task archives.
+- [Bristol EP22–EP23](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/tree/4e333d03008a796ca3e1acab8ad5f270e1380cf0/BRISTOL_EP22_EP23_CODE_AND_AGGREGATES): code, aggregate tables and QA records, not raw provider measurements or detailed controlled derived matrices/certificates. Provider terms remain applicable.
+- [Concrete EP26](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/tree/26dc31207160a477a125614f5c4de97a5a9577fa/CONCRETE_EP26_RIGHTS_SCOPED_EVIDENCE): rights-scoped ZIP with original official-input states, projected mirror-input states, model results and decision/witness records, pinned input restoration and component-specific rights. Its Git blob hash and byte size match the uploaded local ZIP; independent public binary re-download is pending. The two reconstructed scenario cells remain distinguished from the four historical saved-state scenarios; missing original crossed-cell objects are not claimed recovered.
+
+No new Zenodo deposit, journal submission, or scientific result is asserted. Private review correspondence and controlled source material remain excluded.
+
 ## Evidence access update — 27 November 2026
 
 See the [current reproducibility evidence index](PUBLIC_EVIDENCE_INDEX_20261127.md) for verified public release paths, the project representative's confirmation of unsigned Zenodo landing-page access, and the scope of later controlled evidence. Existing release assets and scientific outputs remain unchanged.
