@@ -1,0 +1,28 @@
+name: Bristol public aggregate readback
+on:
+  pull_request:
+    branches: [main]
+    paths: [.github/workflows/bristol-public-readback.yml]
+permissions: {}
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify all 17 rights-scoped Bristol files without authentication
+        run: |
+          python3 - <<'PY'
+          import hashlib, urllib.request, urllib.parse
+          base = "https://raw.githubusercontent.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/4e333d03008a796ca3e1acab8ad5f270e1380cf0/BRISTOL_EP22_EP23_CODE_AND_AGGREGATES/"
+          def read(p):
+              with urllib.request.urlopen(base + urllib.parse.quote(p), timeout=60) as r:
+                  return r.read()
+          entries = [line.split(None, 1) for line in read("SHA256SUMS.txt").decode().splitlines() if line.strip()]
+          assert len(entries) == 17
+          for expected, name in entries:
+              assert not name.startswith("/") and ".." not in name.split("/")
+              actual = hashlib.sha256(read(name)).hexdigest()
+              assert actual == expected, name
+              print("PASS", name, actual, flush=True)
+          print("BRISTOL PUBLIC AGGREGATE READBACK: 17/17 PASS", flush=True)
+          PY
