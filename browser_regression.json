@@ -1,31 +1,38 @@
 {
-  "scope": "Browser projection/dual engine; independent NumPy verification on 510 frozen NASA coefficients at epsilon=0.1, eta=0.01, gamma=0.001. No refitting.",
+  "scope": "Independent NumPy verification of browser decisions on frozen NASA states. No parent model refitting.",
+  "reference_archive_sha256": "1edd543fb6544f8bd23de418b3108f1617518251bf35a2cb18ec966d5a7225dd",
+  "records_sha256": "02e7b7cdf3e62dee839e125e99a9047222ed6f1f17d291f2ca8419084a7d180e",
+  "total": 510,
+  "conclusive": 510,
+  "incorrect_conclusive": 0,
   "counts": [
     {
       "reference": "PROTECTED",
       "browser": "PROTECTED",
-      "count": 397
-    },
-    {
-      "reference": "PROTECTED",
-      "browser": "UNRESOLVED",
-      "count": 6
+      "count": 403
     },
     {
       "reference": "REVERSIBLE",
       "browser": "REVERSIBLE",
-      "count": 90
-    },
-    {
-      "reference": "REVERSIBLE",
-      "browser": "UNRESOLVED",
-      "count": 17
+      "count": 107
     }
   ],
-  "total": 510,
-  "conclusive": 487,
-  "incorrect_conclusive": 0,
-  "max_witness_training_change_dB": 0.09999999533168846,
-  "min_positive_protection_check_margin_mixed_units": 3.7168173894097656e-05,
-  "note": "Abstention is not evidence of protection. Float64 checks; not interval arithmetic. Original publication counts belong to the Python engine."
+  "methods": {
+    "projection_dual": 293,
+    "projection_witness": 58,
+    "ellipsoid": 110,
+    "direct_witness": 49
+  },
+  "max_witness_training_change_dB": 0.09999990065115594,
+  "max_witness_relative_objective_increase": 0.00234467920313601,
+  "min_witness_requested_magnitude_margin": 1.3046410517422204e-06,
+  "min_protection_coefficient_movement_margin": 0.010126134610421111,
+  "min_protection_squared_whitened_norm_margin": 1.8816521568376654e-06,
+  "sum_audit_elapsed_ms": 3423.0259809999975,
+  "max_audit_elapsed_ms": 189.13791300000003,
+  "numpy_version": "2.3.5",
+  "note": "Finite precision numerical checks, not interval arithmetic. Unresolved is not protection. Reference labels are compared only after independent certificate checks.",
+  "engine_version": "0.1.1-web",
+  "engine_sha256": "c3da42289597b8e2a6cf06bd99c10772e5199235026c42365a07bbbc026c7d79",
+  "node_version": "v24.22.3"
 }

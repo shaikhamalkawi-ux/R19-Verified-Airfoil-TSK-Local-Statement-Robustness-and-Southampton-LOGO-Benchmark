@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "validation_phase": "final-frozen",
+  "scope": "Frozen official-UCI Concrete inputs; no model fitting, downloads, mirror reconstruction, or website/paper changes. Browser JavaScript engine and NPZ parser executed under Node; no interactive browser UI test.",
+  "source_hashes": {
+    "supp_ep31/Evidence/H3Air_EP26_Concrete_RightsScoped_Public_Evidence.zip": "2cc798e2db4f533f82a7ba8cbd802d6ba2b06eaf4effa9d6fc531ac35318bf97",
+    "supp_ep31/Software/FuzzyRule_Guard_v0.1.0/fuzzyrule_guard.py": "147817def3ce0d12b2a77f827b020a0d34a4850314943f32912c2d7b5516f86c",
+    "web_v011/audit.js": "c3da42289597b8e2a6cf06bd99c10772e5199235026c42365a07bbbc026c7d79",
+    "web_v011/app.js": "81c89cf9e45673796779ddec5bed0062bbc5728ea2dc0ad33511d846ff01827e"
+  },
+  "archive_manifest_entries_verified": 214,
+  "model_states": 10,
+  "historical_saved_official_states": 5,
+  "previously_replayed_official_states": 5,
+  "decisions_per_engine": 120,
+  "expected_counts": {
+    "PROTECTED": 118,
+    "REVERSIBLE": 2
+  },
+  "indices": {
+    "rule_0_water": 4,
+    "rule_0_age": 8,
+    "rule_1_water": 13,
+    "rule_1_age": 17
+  },
+  "budget_fractions_of_training_target_population_sd": [
+    0.01,
+    0.025,
+    0.05
+  ],
+  "eta": 0.01,
+  "gamma": 0.001,
+  "python": {
+    "counts": {
+      "PROTECTED": 118,
+      "REVERSIBLE": 2
+    },
+    "incorrect_conclusive": [],
+    "unresolved_cases": [],
+    "independently_valid_proofs": 118,
+    "independently_valid_witnesses": [
+      {
+        "cell": "official_rounded",
+        "fold": 2,
+        "index": 4,
+        "epsilon": 0.8331609767935064,
+        "train_max": 0.6423859613139472,
+        "heldout_max": 1.337338098965524,
+        "heldout_budget_retained": false,
+        "objective_fraction": 0.0003902839132043343,
+        "alternative_coefficient": -0.0012610059899333947
+      },
+      {
+        "cell": "official_rounded",
+        "fold": 4,
+        "index": 4,
+        "epsilon": 0.8394386539631443,
+        "train_max": 0.6028327396431953,
+        "heldout_max": 1.0105316465287053,
+        "heldout_budget_retained": false,
+        "objective_fraction": 0.0018595739828211168,
+        "alternative_coefficient": 0.0016377658472204182
+      }
+    ]
+  },
+  "browser": {
+    "counts": {
+      "PROTECTED": 118,
+      "REVERSIBLE": 2
+    },
+    "incorrect_conclusive": [],
+    "unresolved_cases": [],
+    "independently_valid_proofs": 118,
+    "independently_valid_witnesses": [
+      {
+        "cell": "official_rounded",
+        "fold": 2,
+        "index": 4,
+        "epsilon": 0.8331609767935064,
+        "train_max": 0.6423866138129741,
+        "heldout_max": 1.3373394573573434,
+        "heldout_budget_retained": false,
+        "objective_fraction": 0.0003902847060609432,
+        "alternative_coefficient": -0.001262288105773779
+      },
+      {
+        "cell": "official_rounded",
+        "fold": 4,
+        "index": 4,
+        "epsilon": 0.8394386539631443,
+        "train_max": 0.839437814524491,
+        "heldout_max": 0.890310274781512,
+        "heldout_budget_retained": false,
+        "objective_fraction": 0.00046028839617950684,
+        "alternative_coefficient": 0.0016393808924379805
+      }
+    ]
+  },
+  "rights_scope": "Archive attributes official UCI dataset to I.-C. Yeh (1998), DOI 10.24432/C5PK67, CC BY 4.0. This check does not verify new external license information. The 20 incomplete mirror projections are excluded; no mirror rows reconstructed.",
+  "limitations": "This supports cross-domain software applicability to a second frozen dataset. It does not certify physical truth, causal effects, generalization, source equivalence, or all mirror scenarios. Float64 validation, not interval arithmetic."
+}

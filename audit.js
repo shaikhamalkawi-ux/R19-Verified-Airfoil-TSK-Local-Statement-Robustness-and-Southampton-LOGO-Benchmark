@@ -1,4 +1,4 @@
-/* Browser companion, v0.1.0-web. Finite-input float64 numerical checks. */
+/* Browser companion, v0.1.1-web. Finite-input float64 numerical checks. */
 (function(root){'use strict';
 const G=1e-8;
 const dot=(a,b)=>{let s=0;for(let i=0;i<a.length;i++)s+=a[i]*b[i];return s};
@@ -7,6 +7,8 @@ const vec=a=>Float64Array.from(a);
 const finite=a=>Array.from(a).every(Number.isFinite);
 function model(m){
  if(!Array.isArray(m.P)||!m.P.length||!Array.isArray(m.beta)||!m.beta.length||!Array.isArray(m.ytrain))throw Error('Missing P, beta or ytrain arrays');
+ const numeric=x=>typeof x==='number'&&Number.isFinite(x),numericRow=x=>Array.isArray(x)&&x.every(numeric);
+ if(m.P.length>20000||m.beta.length>200||!m.P.every(numericRow)||!numericRow(m.beta)||!numericRow(m.ytrain)||!numeric(m.lam)||m.offset!==undefined&&!numeric(m.offset)||m.Pt!=null&&(!Array.isArray(m.Pt)||m.Pt.length>20000||!m.Pt.every(numericRow)))throw Error('Model arrays must contain finite numbers; limits are 20,000 training/held-out rows and 200 coefficients.');
  const P=m.P.map(vec), b=vec(m.beta), y=vec(m.ytrain), n=P.length,q=b.length,lam=Number(m.lam),offset=Number(m.offset??0), Pt=m.Pt==null?null:m.Pt.map(vec);
  if(n>20000||q>200||y.length!==n||P.some(r=>r.length!==q||!finite(r))||!finite(b)||!finite(y)||!(lam>0)||!Number.isFinite(lam)||!Number.isFinite(offset)||Pt&&(Pt.length===0||Pt.some(r=>r.length!==q||!finite(r))))throw Error('Invalid dimensions or nonfinite values. Limits: 20,000 rows, 200 coefficients; lambda > 0.');
  for(let i=0;i<n;i++)y[i]-=offset;
@@ -21,21 +23,25 @@ function model(m){
  function upper(a){const x=new Float64Array(q);for(let i=q-1;i>=0;i--){let s=a[i];for(let j=i+1;j<q;j++)s-=L[j][i]*x[j];x[i]=s/L[i][i]}return x}
  const center=upper(lower(g));for(let i=0;i<q;i++)center[i]*=-1;
  const gHg=-dot(g,center), W=P.map(lower), pc=P.map(p=>dot(p,center));
- if(!finite(center)||!Number.isFinite(gHg))throw Error('Invalid objective geometry');
+ if(!finite(center)||!Number.isFinite(gHg)||gHg < -G||W.some(r=>!finite(r))||!finite(pc))throw Error('Invalid objective geometry');
  return {P,Pt,b,y,n,q,lam,H,g,J,center,gHg,W,pc,lower,upper,R:m.R,labels:m.labels};
 }
 function check(m,j,d,eps,eta,gamma){
- if(!finite(d))return null;const b=m.b[j],base=Math.abs(b),move=-Math.sign(b)*d[j],alt=vec(m.b);for(let k=0;k<m.q;k++)alt[k]+=d[k];
+ if(!Number.isInteger(j)||j<0||j>=m.q||d==null||d.length!==m.q||!finite(d)||![eps,eta,gamma].every(x=>Number.isFinite(x)&&x>0))return null;const b=m.b[j],base=Math.abs(b),move=-Math.sign(b)*d[j],alt=vec(m.b);for(let k=0;k<m.q;k++)alt[k]+=d[k];
  const train=Math.max(...m.P.map(p=>Math.abs(dot(p,d))));let J2=m.lam*dot(alt,alt);for(let i=0;i<m.n;i++){let r=dot(m.P[i],alt)-m.y[i];J2+=r*r/m.n}
  const direct=(J2-m.J)/m.J,quad=(dot(d,m.H.map(h=>dot(h,d)))+2*dot(m.g,d))/m.J,t=G*(1+base);
  if(![train,direct,quad,move].every(Number.isFinite)||Math.abs(direct-quad)>G*(1+Math.abs(quad))||train>eps||Math.max(direct,quad)>eta||move<=base+t||move<(1+gamma)*base-t)return null;
  const held=m.Pt?Math.max(...m.Pt.map(p=>Math.abs(dot(p,d)))):null;
+ if(held!==null&&!Number.isFinite(held))return null;
  return {max_training_change:train,relative_objective_increase:direct,quadratic_objective_increase:quad,heldout_max_change:held,heldout_budget_retained:held===null?null:held<=eps,alternative_beta:Array.from(alt),delta:Array.from(d)};
 }
 function audit(m,j,eps,eta,gamma=.001,options={}){
  if(!Number.isInteger(j)||j<0||j>=m.q||![eps,eta,gamma].every(v=>Number.isFinite(v)&&v>0))throw Error('Invalid coefficient index or budget');
  const b=m.b[j],base=Math.abs(b),sign=-Math.sign(b),r={index:j,original_coefficient:b,status:'UNRESOLVED',epsilon:eps,eta,gamma,method:'none'};
- if(base<=G)return r;const c=new Float64Array(m.q);c[j]=sign;const w=m.lower(c),cc=dot(c,m.center),rad2=eta*m.J+Math.max(0,m.gHg),rad=Math.sqrt(rad2),wn=norm(w),margin=G*(1+base+norm(m.b));
+ if(base<=G)return r;
+ if(!Number.isInteger(options.rounds??60)||(options.rounds??60)<1||(options.rounds??60)>200||!Number.isInteger(options.sweeps??1000)||(options.sweeps??1000)<1||(options.sweeps??1000)>10000||!Number.isFinite(options.relaxation??1.7)||(options.relaxation??1.7)<=0||(options.relaxation??1.7)>=2)throw Error('Invalid bounded solver options');
+ const c=new Float64Array(m.q);c[j]=sign;const w=m.lower(c),cc=dot(c,m.center),rad2=eta*m.J+Math.max(0,m.gHg),rad=Math.sqrt(rad2),wn=norm(w),margin=G*(1+base+norm(m.b));
+ if(![cc,rad2,rad,wn,margin].every(Number.isFinite))return r;
  const ellipse=cc+rad*wn+margin;r.movement_upper_bound=ellipse;
  if(ellipse<base)return {...r,status:'PROTECTED',method:'ellipsoid',zero_margin:base-ellipse};
  const zt=(target)=>{const z=vec(w),s=(target-cc)/dot(w,w);for(let k=0;k<z.length;k++)z[k]*=s;return z};
@@ -51,10 +57,42 @@ function audit(m,j,eps,eta,gamma=.001,options={}){
    const s=idx===-1?-1:side;for(let k=0;k<q;k++)a[k]*=s;const len=norm(a);if(len<1e-30)return;for(let k=0;k<q;k++)a[k]/=len;active.push({idx,side,a,rhs:rhs/len,len,mu:0});
   }
   add(-1,-1);
+  // Coordinate projections can stall when active rows are nearly parallel.
+  // A regularized Newton step on positive dual coordinates accelerates them.
+  // The step is accepted only if it improves the *unregularized* dual value;
+  // all multipliers stay nonnegative. Certificates are still checked below.
+  function polish(){
+   for(let step=0;step<8;step++){
+    const work=active.filter(h=>h.mu>0);const k=work.length;
+    if(k<2||k>200)return;
+    const C=Array.from({length:k},()=>new Float64Array(k));
+    const rhs=Float64Array.from(work,h=>dot(h.a,z)-h.rhs);
+    for(let i=0;i<k;i++)for(let j=0;j<=i;j++){
+     let v=dot(work[i].a,work[j].a)+(i===j?1e-12:0);
+     for(let t=0;t<j;t++)v-=C[i][t]*C[j][t];
+     if(i===j){if(!(v>0)||!Number.isFinite(v))return;C[i][j]=Math.sqrt(v)}else C[i][j]=v/C[j][j];
+    }
+    const d=new Float64Array(k);
+    for(let i=0;i<k;i++){let v=rhs[i];for(let j=0;j<i;j++)v-=C[i][j]*d[j];d[i]=v/C[i][i]}
+    for(let i=k-1;i>=0;i--){let v=d[i];for(let j=i+1;j<k;j++)v-=C[j][i]*d[j];d[i]=v/C[i][i]}
+    if(!finite(d))return;
+    let alpha=1;for(let i=0;i<k;i++)if(d[i]<0)alpha=Math.min(alpha,-work[i].mu/d[i]);
+    if(!(alpha>0))return;
+    let oldRhs=0;const oldS=new Float64Array(q);for(const h of active){oldRhs+=h.mu*h.rhs;for(let t=0;t<q;t++)oldS[t]+=h.mu*h.a[t]}
+    const oldValue=-.5*dot(oldS,oldS)-oldRhs;
+    const saved=work.map(h=>h.mu);for(let i=0;i<k;i++)work[i].mu=Math.max(0,saved[i]+alpha*d[i]);
+    let nextRhs=0;const nextS=new Float64Array(q);for(const h of active){nextRhs+=h.mu*h.rhs;for(let t=0;t<q;t++)nextS[t]+=h.mu*h.a[t]}
+    const nextValue=-.5*dot(nextS,nextS)-nextRhs;
+    if(!Number.isFinite(nextValue)||nextValue<=oldValue){work.forEach((h,i)=>h.mu=saved[i]);return}
+    for(let t=0;t<q;t++)z[t]=-nextS[t];
+    if(alpha===1)return;
+   }
+  }
   for(let round=0;round<(options.rounds??60);round++){
-   for(let sweep=0;sweep<(options.sweeps??250);sweep++){
+   for(let sweep=0;sweep<(options.sweeps??1000);sweep++){
     let change=0;
-    for(let h of active){const nm=Math.max(0,h.mu+dot(h.a,z)-h.rhs),d=nm-h.mu;h.mu=nm;change=Math.max(change,Math.abs(d));for(let k=0;k<q;k++)z[k]-=d*h.a[k]}
+    for(let h of active){const nm=Math.max(0,h.mu+(options.relaxation??1.7)*(dot(h.a,z)-h.rhs)),d=nm-h.mu;h.mu=nm;change=Math.max(change,Math.abs(d));for(let k=0;k<q;k++)z[k]-=d*h.a[k]}
+    if(sweep%50===49)polish();
     if((sweep%10===0||change<1e-10)&&proof){
      // Recompute dual residual from multipliers, not accumulated iterates.
      const s=new Float64Array(q);let rhs=0;for(let h of active){rhs+=h.mu*h.rhs;for(let k=0;k<q;k++)s[k]+=h.mu*h.a[k]}
@@ -68,7 +106,7 @@ function audit(m,j,eps,eta,gamma=.001,options={}){
    if(!proof){const wv=check(m,j,delta(z),eps,eta,gamma);if(wv)return {witness:wv}}
    const violations=[];for(let i=0;i<n;i++){const a=dot(m.W[i],z)+m.pc[i],v=Math.abs(a)-cap;if(v>G*Math.max(1,cap)&&!lookup.has(i+':'+Math.sign(a)))violations.push([v,i,Math.sign(a)])}
    violations.sort((a,b)=>b[0]-a[0]);for(const a of violations.slice(0,12))add(a[1],a[2]);
-   if(!violations.length){if(proof&&norm(z)<=rad*(1+1e-8)&&dot(w,z)+cc>=t-margin&&m.P.every((p,i)=>Math.abs(dot(m.W[i],z)+m.pc[i])<=cap+G))return {};if(round>8)break}
+   if(!violations.length){if(proof&&norm(z)<=rad*(1+1e-8)&&dot(w,z)+cc>=t-margin&&m.P.every((p,i)=>Math.abs(dot(m.W[i],z)+m.pc[i])<=cap+G))return {};if(round>20)break}
   }
   return {best};
  }
