@@ -1,7 +1,0 @@
-# EP26 Concrete factorial — rights-scoped evidence
-
-Download [the public evidence ZIP](H3Air_EP26_Concrete_RightsScoped_Public_Evidence.zip) (2,101,536 bytes). SHA-256: `2cc798e2db4f533f82a7ba8cbd802d6ba2b06eaf4effa9d6fc531ac35318bf97`.
-
-This is a component-scoped selection, not the complete private recovery archive. It includes original project code, official attributed UCI data, model results, 360 numerical decisions, six witness records, ten original-byte official-input model states and 20 projected mirror-input states. The mirror CSVs, actual-target mirror OOF tables and six direct input/target/design arrays per mirror state are excluded. The ZIP contains a fail-closed pinned-source retrieval and restoration script, original-input hashes, and a manifest that distinguishes original versus projected state bytes. Restoration was checked against admitted local inputs, not a fresh independent download of the mirrors. No model fitting or scientific result changes were made in this publication step.
-
-See the archive's LICENSE_SCOPE.md for I.-C. Yeh, UCI CC BY 4.0 attribution (https://doi.org/10.24432/C5PK67), upstream mirror terms, and original-code/output scope. No blanket license is asserted. Historical EP9 missing state objects were not recovered; EP26 reconstructed two crossed cells. The 360 recorded decisions include 240 factorial decisions (236 protected, four strict reversals); all four alternatives exceed the held-out prediction budget.

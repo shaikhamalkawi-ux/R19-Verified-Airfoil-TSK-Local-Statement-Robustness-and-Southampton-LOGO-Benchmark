@@ -1,9 +1,0 @@
-protocol,support,model,rows,spectra,rmse_dB
-LOGO,all,tsk,1464,122,2.5992355205649846
-LOGO,all,extra_trees,1464,122,2.568071902272583
-LOGO,common_angles_ge_minus4,tsk,1440,120,2.606436681592672
-LOGO,common_angles_ge_minus4,extra_trees,1440,120,2.578324342845583
-NACA0012,all,tsk,372,31,0.8296293871663445
-NACA0012,all,extra_trees,372,31,0.44580570010474124
-NACA0012,common_angles_ge_minus4,tsk,360,30,0.8383867134853963
-NACA0012,common_angles_ge_minus4,extra_trees,360,30,0.4520142666987926

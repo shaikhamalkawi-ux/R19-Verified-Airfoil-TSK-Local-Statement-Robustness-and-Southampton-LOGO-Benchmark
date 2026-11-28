@@ -1,5 +1,0 @@
-source,protocol,rows,spectra_or_configurations,geometries,response_scale,TSK_RMSE,ET_RMSE,local_statement_scope,protection_counts,strict_reversal_counts,budget,provenance
-NASA,10-fold grouped configuration CV,1503,106,1,scaled SPL dB,4.166,2.381,510 selected local coefficients,403,107,epsilon 0.1 dB; eta 0.01,EP3R1 reviewer audit historical rounded values
-Southampton,7-fold geometry LOGO,343,38,7,source-normalized dimensionless response,0.05939610283816987,0.047838808038834585,18 frequency slopes,18,0,fold-scaled epsilon=(0.1/6.896361277488791)*training response SD; eta 0.01,R19 GitHub README and SUMMARY.json
-Bristol,4-fold geometry LOGO,1464,122,4,source-power integrated SPL dB,2.5992355205649846,2.568071902272583,32 frequency and angle slopes,27,5,epsilon 0.1 dB; eta 0.01,EP20 fresh end-to-end replay
-Bristol NACA0012,5-fold spectrum-grouped CV,372,31,1,source-power integrated SPL dB,0.8296293871663445,0.44580570010474124,104 frequency and angle slopes,94,10,epsilon 0.1 dB; eta 0.01,EP20 fresh end-to-end replay

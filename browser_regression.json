@@ -1,0 +1,31 @@
+{
+  "scope": "Browser projection/dual engine; independent NumPy verification on 510 frozen NASA coefficients at epsilon=0.1, eta=0.01, gamma=0.001. No refitting.",
+  "counts": [
+    {
+      "reference": "PROTECTED",
+      "browser": "PROTECTED",
+      "count": 397
+    },
+    {
+      "reference": "PROTECTED",
+      "browser": "UNRESOLVED",
+      "count": 6
+    },
+    {
+      "reference": "REVERSIBLE",
+      "browser": "REVERSIBLE",
+      "count": 90
+    },
+    {
+      "reference": "REVERSIBLE",
+      "browser": "UNRESOLVED",
+      "count": 17
+    }
+  ],
+  "total": 510,
+  "conclusive": 487,
+  "incorrect_conclusive": 0,
+  "max_witness_training_change_dB": 0.09999999533168846,
+  "min_positive_protection_check_margin_mixed_units": 3.7168173894097656e-05,
+  "note": "Abstention is not evidence of protection. Float64 checks; not interval arithmetic. Original publication counts belong to the Python engine."
+}
