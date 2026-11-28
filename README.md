@@ -1,5 +1,10 @@
 # Project 57 H3Air — public R21R8-EP11 research archive
 
+
+## Companion research software — FuzzyRule Guard v0.1.0
+
+[Run FuzzyRule Guard v0.1.0](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/tree/96a8fe019ce3f9e86a8eff407b4935f982189498/FuzzyRule_Guard_v0.1.0) — a command-line numerical audit prototype for user-supplied frozen first-order ridge-TSK consequent designs. It generates checked protection bounds, reversal witnesses or unresolved outcomes and exports CSV/JSON reports. On 28 November 2026, saved-certificate readback and a fresh solver regression each reproduced all 510 archived NASA primary classifications (403 protected, 107 reversible) without refitting the ten parent models. These checks do not establish physical validity, unrestricted transport, or a new scientific result. Usage instructions and scope are in the pinned tool directory. The earlier research releases and licences are unchanged; no new reuse licence is asserted for the prototype.
+
 ## Additional public evidence — 28 November 2026
 
 - [Historical R5 stored-output selection](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/tree/8ee7654cac10ac887e4370a316d838d1d19da09e/R5_HISTORICAL_BOOTSTRAP_EVIDENCE): 80 branch-result NPZs and 40 parent NPZs; all 41 ZIP names, byte sizes and Git blob SHA-1 values match the original archive manifest. An independent credential-free full-file retrieval on 28 November 2026 passed all 41 size, SHA-256, Git blob SHA-1 and ZIP CRC checks ([verification record](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/blob/9e27fe90e420a3dd6f5f8d1f9aa70656e283a83c/PUBLIC_READBACK_20261128.json); [execution log](https://github.com/shaikhamalkawi-ux/R19-Verified-Airfoil-TSK-Local-Statement-Robustness-and-Southampton-LOGO-Benchmark/actions/runs/46070756853)). This selection is distinct from the 40 newly fitted EP11 task archives.
